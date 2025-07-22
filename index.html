@@ -3,40 +3,43 @@
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>Alex Rivera | Front-End Developer</title>
+  <title>Dhanush | Data Analyst</title>
   <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;700&display=swap" rel="stylesheet">
-  <script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
   <link href="https://unpkg.com/aos@2.3.1/dist/aos.css" rel="stylesheet">
   <style>
     * { margin: 0; padding: 0; box-sizing: border-box; }
-    body { font-family: 'Inter', sans-serif; background: #ffffff; color: #222; line-height: 1.6; transition: background 0.3s, color 0.3s; }
-    header { background: #ffffff; color: #111827; padding: 6rem 2rem 2rem; text-align: center; border-bottom: 1px solid #eee; }
-    header h1 { font-size: 2.5rem; font-weight: 700; }
-    header p { font-size: 1.2rem; color: #6b7280; }
-    nav { background: #fff; padding: 0.75rem 1rem; text-align: center; position: sticky; top: 0; border-bottom: 1px solid #eee; }
-    nav a { margin: 0 1rem; color: #374151; text-decoration: none; font-weight: 500; }
-    section { padding: 4rem 2rem; max-width: 800px; margin: auto; }
-    .section-title { font-size: 2rem; color: #111827; font-weight: 600; margin-bottom: 2rem; text-align: center; }
-    .about img { width: 120px; border-radius: 50%; display: block; margin: 0 auto 1rem; }
-    .about p { text-align: center; color: #4b5563; }
-    .project-grid { display: grid; grid-template-columns: 1fr; gap: 2rem; }
-    .card { border: 1px solid #e5e7eb; padding: 1.5rem; border-radius: 8px; transition: box-shadow 0.3s; }
-    .card:hover { box-shadow: 0 4px 12px rgba(0,0,0,0.05); }
-    .card h3 { margin-bottom: 0.5rem; font-size: 1.25rem; color: #111827; }
-    .card p { color: #6b7280; }
-    .button { display: inline-block; margin-top: 1rem; background: #111827; color: white; padding: 0.5rem 1rem; border-radius: 4px; font-size: 0.9rem; text-decoration: none; }
+    body { font-family: 'Inter', sans-serif; background: #ffffff; color: #222; line-height: 1.6; transition: background 0.3s, color 0.3s; scroll-behavior: smooth; }
+    header { background: linear-gradient(to right, #0f172a, #1e293b); color: white; padding: 6rem 2rem 2rem; text-align: center; }
+    header h1 { font-size: 3rem; font-weight: 700; animation: fadeInDown 1s ease; }
+    header p { font-size: 1.2rem; color: #cbd5e1; animation: fadeInUp 1s ease 0.5s; }
+    nav { background: #fff; padding: 1rem; text-align: center; position: sticky; top: 0; border-bottom: 1px solid #eee; z-index: 10; }
+    nav a { margin: 0 1rem; color: #374151; text-decoration: none; font-weight: 500; transition: color 0.3s ease; }
+    nav a:hover { color: #1d4ed8; }
+    section { padding: 4rem 2rem; max-width: 900px; margin: auto; }
+    .section-title { font-size: 2.2rem; color: #111827; font-weight: 600; margin-bottom: 2.5rem; text-align: center; }
+    .about img { width: 130px; border-radius: 50%; display: block; margin: 0 auto 1rem; box-shadow: 0 4px 12px rgba(0,0,0,0.1); }
+    .about p { text-align: center; color: #4b5563; max-width: 700px; margin: auto; }
+    .project-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(280px, 1fr)); gap: 2rem; }
+    .card { background: white; border: 1px solid #e5e7eb; padding: 1.5rem; border-radius: 8px; transition: transform 0.3s, box-shadow 0.3s; }
+    .card:hover { transform: translateY(-5px); box-shadow: 0 10px 20px rgba(0,0,0,0.05); }
+    .card h3 { margin-bottom: 0.5rem; font-size: 1.3rem; color: #111827; }
+    .card p { color: #6b7280; font-size: 0.95rem; }
+    .button { display: inline-block; margin-top: 1rem; background: #1d4ed8; color: white; padding: 0.5rem 1rem; border-radius: 4px; font-size: 0.9rem; text-decoration: none; transition: background 0.3s ease; }
+    .button:hover { background: #1e40af; }
     .skills-icons { display: flex; flex-wrap: wrap; justify-content: center; gap: 1rem; margin-top: 2rem; }
     .skills-icons img { width: 40px; height: 40px; }
     form { display: flex; flex-direction: column; gap: 1rem; max-width: 500px; margin: auto; }
     input, textarea { padding: 0.75rem; border-radius: 4px; border: 1px solid #d1d5db; font-size: 1rem; }
-    input[type="submit"] { background: #111827; color: white; border: none; cursor: pointer; }
+    input[type="submit"] { background: #1d4ed8; color: white; border: none; cursor: pointer; }
     footer { text-align: center; padding: 2rem 1rem; font-size: 0.875rem; color: #6b7280; border-top: 1px solid #eee; }
+    @keyframes fadeInDown { from { opacity: 0; transform: translateY(-20px); } to { opacity: 1; transform: translateY(0); } }
+    @keyframes fadeInUp { from { opacity: 0; transform: translateY(20px); } to { opacity: 1; transform: translateY(0); } }
   </style>
 </head>
 <body>
   <header>
-    <h1>Alex Rivera</h1>
-    <p>Front-End Developer</p>
+    <h1>Dhanush</h1>
+    <p>Data Analyst | Excel • SQL • Python • Power BI</p>
   </header>
 
   <nav>
@@ -49,27 +52,27 @@
   <section id="about" data-aos="fade-up">
     <h2 class="section-title">About Me</h2>
     <div class="about">
-      <img src="https://via.placeholder.com/120" alt="Profile photo" />
-      <p>Front-end developer with a passion for clean design and responsive interfaces. Skilled in React, HTML/CSS, and modern design tools like Figma. I enjoy creating simple, beautiful user experiences.</p>
+      <img src="https://via.placeholder.com/130" alt="Profile photo" />
+      <p>I'm a data analyst passionate about transforming data into actionable insights. With experience in SQL, Python, Excel, and visualization tools like Power BI, I help businesses make data-driven decisions through clear, impactful storytelling.</p>
     </div>
   </section>
 
   <section id="projects" data-aos="fade-up">
-    <h2 class="section-title">Projects</h2>
+    <h2 class="section-title">Featured Projects</h2>
     <div class="project-grid">
       <div class="card">
-        <h3>Portfolio Website</h3>
-        <p>Personal portfolio to showcase my work, skills, and background.</p>
+        <h3>Sales Dashboard (Power BI)</h3>
+        <p>Interactive dashboard showing sales trends, KPIs, and region-wise performance for stakeholders.</p>
         <a href="#" class="button">View Project</a>
       </div>
       <div class="card">
-        <h3>WeatherNow App</h3>
-        <p>Real-time weather app using OpenWeatherMap API and modern UI.</p>
+        <h3>Customer Churn Analysis</h3>
+        <p>Used Python and pandas to analyze churn patterns and predict high-risk customers for a telecom company.</p>
         <a href="#" class="button">View Project</a>
       </div>
       <div class="card">
-        <h3>TaskTrackr</h3>
-        <p>Lightweight task manager to stay productive and organized.</p>
+        <h3>SQL Data Exploration</h3>
+        <p>Wrote complex SQL queries to analyze e-commerce behavior and product performance across categories.</p>
         <a href="#" class="button">View Project</a>
       </div>
     </div>
@@ -78,18 +81,17 @@
   <section id="skills" data-aos="fade-up">
     <h2 class="section-title">Skills</h2>
     <div class="skills-icons">
-      <img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/html5/html5-original.svg" alt="HTML5" />
-      <img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/css3/css3-original.svg" alt="CSS3" />
-      <img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/javascript/javascript-original.svg" alt="JavaScript" />
-      <img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/react/react-original.svg" alt="React" />
-      <img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/vuejs/vuejs-original.svg" alt="Vue.js" />
+      <img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/python/python-original.svg" alt="Python" />
+      <img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/mysql/mysql-original.svg" alt="SQL" />
+      <img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/google/google-original.svg" alt="Sheets/Excel" />
       <img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/github/github-original.svg" alt="GitHub" />
-      <img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/figma/figma-original.svg" alt="Figma" />
+      <img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/pandas/pandas-original.svg" alt="Pandas" />
+      <img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/numpy/numpy-original.svg" alt="NumPy" />
     </div>
   </section>
 
   <section id="contact" data-aos="fade-up">
-    <h2 class="section-title">Contact</h2>
+    <h2 class="section-title">Get in Touch</h2>
     <form action="https://formspree.io/f/your-form-id" method="POST">
       <input type="text" name="name" placeholder="Your Name" required />
       <input type="email" name="email" placeholder="Your Email" required />
@@ -99,11 +101,13 @@
   </section>
 
   <footer>
-    <p>&copy; 2025 Alex Rivera. All rights reserved.</p>
+    <p>&copy; 2025 Dhanush. All rights reserved.</p>
   </footer>
 
+  <script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
   <script>
     AOS.init();
   </script>
 </body>
 </html>
+
