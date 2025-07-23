@@ -10,18 +10,16 @@
     :root {
       --bg: #ffffff;
       --text: #222222;
-      --card: #ffffff;
       --section: #f9f9f9;
       --accent: #1d4ed8;
-      --nav: #ffffff;
+      --nav-bg: #ffffff;
     }
     .dark-mode {
       --bg: #0d1117;
       --text: #e0e0e0;
-      --card: #161b22;
       --section: #161b22;
       --accent: #58a6ff;
-      --nav: #161b22;
+      --nav-bg: #161b22;
     }
     * { margin: 0; padding: 0; box-sizing: border-box; }
     body {
@@ -32,52 +30,37 @@
       transition: background 0.3s, color 0.3s;
       scroll-behavior: smooth;
     }
-    .toggle-btn {
-      position: fixed;
-      top: 1rem;
-      right: 1rem;
-      z-index: 1000;
-      background: var(--accent);
-      color: white;
-      border: none;
-      padding: 0.5rem 1rem;
-      border-radius: 4px;
-      cursor: pointer;
-      font-size: 0.9rem;
-    }
     header {
       background: linear-gradient(to right, #0f172a, #1e293b);
       color: white;
       padding: 6rem 2rem 2rem;
       text-align: center;
-      animation: fadeIn 2s ease-in-out;
     }
     header h1 {
       font-size: 3rem;
       font-weight: 700;
-      animation: slideInDown 1s ease-in-out;
     }
     header p {
       font-size: 1.2rem;
       color: #cbd5e1;
-      animation: slideInUp 1s ease-in-out 0.5s;
     }
     nav {
-      background: var(--nav);
+      background: var(--nav-bg);
       padding: 1rem;
       text-align: center;
       position: sticky;
       top: 0;
-      border-bottom: 1px solid #eee;
       z-index: 10;
-      animation: fadeIn 1s ease-in-out;
+      display: flex;
+      flex-wrap: wrap;
+      justify-content: center;
+      gap: 1rem;
+      border-bottom: 1px solid #eee;
     }
     nav a {
-      margin: 0 1rem;
       color: var(--text);
       text-decoration: none;
       font-weight: 500;
-      transition: color 0.3s ease;
       position: relative;
     }
     nav a::after {
@@ -91,23 +74,37 @@
       bottom: -5px;
       left: 0;
     }
-    nav a:hover { color: var(--accent); }
-    nav a:hover::after { width: 100%; }
+    nav a:hover::after {
+      width: 100%;
+    }
+    .toggle-btn {
+      position: fixed;
+      bottom: 16px;
+      right: 16px;
+      z-index: 999;
+      background: var(--accent);
+      color: white;
+      border: none;
+      border-radius: 50%;
+      width: 40px;
+      height: 40px;
+      font-size: 1rem;
+      cursor: pointer;
+      box-shadow: 0 4px 10px rgba(0,0,0,0.2);
+    }
     section {
       padding: 4rem 2rem;
       max-width: 900px;
       margin: auto;
-      animation: fadeInUp 1s ease-in-out;
       background: var(--section);
+      margin-bottom: 2rem;
       border-radius: 8px;
     }
     .section-title {
-      font-size: 2.2rem;
-      color: var(--text);
+      font-size: 2rem;
       font-weight: 600;
-      margin-bottom: 2.5rem;
       text-align: center;
-      animation: zoomIn 0.8s ease-in-out;
+      margin-bottom: 2rem;
       position: relative;
     }
     .section-title::after {
@@ -125,7 +122,6 @@
       display: block;
       margin: 0 auto 1rem;
       box-shadow: 0 4px 12px rgba(0,0,0,0.1);
-      animation: scaleIn 1s ease;
     }
     .about p {
       text-align: center;
@@ -139,19 +135,18 @@
       gap: 2rem;
     }
     .card {
-      background: var(--card);
+      background: var(--bg);
       border: 1px solid #e5e7eb;
       padding: 1.5rem;
       border-radius: 8px;
-      transition: transform 0.3s, box-shadow 0.3s;
-      transform-origin: center;
+      transition: transform 0.3s ease, box-shadow 0.3s ease;
     }
     .card:hover {
       transform: translateY(-5px) scale(1.02);
       box-shadow: 0 10px 20px rgba(0,0,0,0.05);
     }
-    .card h3 { margin-bottom: 0.5rem; font-size: 1.3rem; color: var(--text); }
-    .card p { color: var(--text); font-size: 0.95rem; }
+    .card h3 { margin-bottom: 0.5rem; font-size: 1.2rem; color: var(--text); }
+    .card p { color: #6b7280; font-size: 0.95rem; }
     .button {
       display: inline-block;
       margin-top: 1rem;
@@ -159,13 +154,7 @@
       color: white;
       padding: 0.5rem 1rem;
       border-radius: 4px;
-      font-size: 0.9rem;
       text-decoration: none;
-      transition: transform 0.3s ease, background 0.3s ease;
-    }
-    .button:hover {
-      background: #1e40af;
-      transform: scale(1.05);
     }
     .skills-icons {
       display: flex;
@@ -194,45 +183,27 @@
       border-radius: 4px;
       border: 1px solid #d1d5db;
       font-size: 1rem;
-      transition: border 0.3s ease;
-    }
-    input:focus, textarea:focus {
-      border-color: var(--accent);
-      outline: none;
     }
     input[type="submit"] {
       background: var(--accent);
       color: white;
       border: none;
       cursor: pointer;
-      transition: background 0.3s ease;
-    }
-    input[type="submit"]:hover {
-      background: #1e40af;
     }
     footer {
       text-align: center;
       padding: 2rem 1rem;
       font-size: 0.875rem;
       color: #6b7280;
-      border-top: 1px solid #eee;
     }
-    @keyframes fadeIn { from { opacity: 0; } to { opacity: 1; } }
-    @keyframes slideInDown { from { opacity: 0; transform: translateY(-30px); } to { opacity: 1; transform: translateY(0); } }
-    @keyframes slideInUp { from { opacity: 0; transform: translateY(30px); } to { opacity: 1; transform: translateY(0); } }
-    @keyframes fadeInUp { from { opacity: 0; transform: translateY(20px); } to { opacity: 1; transform: translateY(0); } }
-    @keyframes zoomIn { from { transform: scale(0.9); opacity: 0; } to { transform: scale(1); opacity: 1; } }
-    @keyframes scaleIn { from { transform: scale(0); opacity: 0; } to { transform: scale(1); opacity: 1; } }
   </style>
 </head>
 <body>
-  <button class="toggle-btn" onclick="toggleMode()">🌙 Toggle Mode</button>
-
+  <button class="toggle-btn" onclick="toggleMode()">🌙</button>
   <header>
     <h1>Dhanush</h1>
     <p>Data Analyst | Excel • SQL • Python • Power BI</p>
   </header>
-
   <nav>
     <a href="#about">About</a>
     <a href="#projects">Projects</a>
@@ -240,7 +211,7 @@
     <a href="#contact">Contact</a>
   </nav>
 
-  <section id="about" data-aos="fade-up">
+  <section id="about">
     <h2 class="section-title">About Me</h2>
     <div class="about">
       <img src="https://via.placeholder.com/130" alt="Profile photo" />
@@ -248,7 +219,7 @@
     </div>
   </section>
 
-  <section id="projects" data-aos="fade-up">
+  <section id="projects">
     <h2 class="section-title">Featured Projects</h2>
     <div class="project-grid">
       <div class="card">
@@ -269,7 +240,7 @@
     </div>
   </section>
 
-  <section id="skills" data-aos="fade-up">
+  <section id="skills">
     <h2 class="section-title">Skills</h2>
     <div class="skills-icons">
       <img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/python/python-original.svg" alt="Python" />
@@ -281,7 +252,7 @@
     </div>
   </section>
 
-  <section id="contact" data-aos="fade-up">
+  <section id="contact">
     <h2 class="section-title">Get in Touch</h2>
     <form action="https://formspree.io/f/your-form-id" method="POST">
       <input type="text" name="name" placeholder="Your Name" required />
@@ -304,3 +275,4 @@
   </script>
 </body>
 </html>
+
