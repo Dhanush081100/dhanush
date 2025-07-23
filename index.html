@@ -169,7 +169,7 @@
       from { width: 0; } to { width: inherit; }
     }
 
-    /* Enhanced Contact Section */
+    /* Enhanced Contact Form Styling */
     form {
       background: #f9fafb;
       padding: 2rem;
@@ -204,6 +204,28 @@
     }
     form input[type="submit"]:hover {
       background: #2563eb;
+    }
+
+    /* Dark Mode Form Fixes */
+    body.dark-mode form {
+      background: #1e293b;
+    }
+    body.dark-mode input,
+    body.dark-mode textarea {
+      background: #0f172a;
+      color: #f1f5f9;
+      border-color: #334155;
+    }
+    body.dark-mode input::placeholder,
+    body.dark-mode textarea::placeholder {
+      color: #94a3b8;
+    }
+    body.dark-mode input[type="submit"] {
+      background: var(--accent);
+      color: white;
+    }
+    body.dark-mode input[type="submit"]:hover {
+      background: #3b82f6;
     }
 
     footer {
@@ -327,3 +349,4 @@
   </script>
 </body>
 </html>
+
